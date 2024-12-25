@@ -7,7 +7,7 @@ const Navbar = () => {
       <Link href="/">
         <div className="flex items-center">
           <Image src="/logo.svg" alt="RoomBooker" width={200} height={200} />
-          <p className="ml-[-80px] text-3xl font-bold">RoomBooker</p>
+          <p className="ml-[-80px] text-3xl font-bold">Stay Swift</p>
         </div>
       </Link>
 
