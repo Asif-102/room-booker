@@ -3,13 +3,16 @@
 import { login } from "@/app/actions";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import SubmitButton from "./SubmitButton";
 
 const LoginForm = () => {
   const [error, setError] = useState("");
+  const [pending, setPending] = useState(false);
   const router = useRouter();
 
   async function onSubmit(event) {
     event.preventDefault();
+    setPending(true);
 
     try {
       const formData = new FormData(event.currentTarget);
@@ -22,6 +25,8 @@ const LoginForm = () => {
       }
     } catch (err) {
       setError(err.message);
+    } finally {
+      setPending(false);
     }
   }
 
@@ -39,9 +44,7 @@ const LoginForm = () => {
           <input type="password" name="password" id="password" />
         </div>
 
-        <button type="submit" className="btn-primary w-full mt-4">
-          Login
-        </button>
+        <SubmitButton text="Login" pending={pending} />
       </form>
     </>
   );
