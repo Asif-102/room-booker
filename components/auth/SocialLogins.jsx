@@ -2,8 +2,9 @@
 
 import { signIn } from "next-auth/react";
 import Image from "next/image";
+import Link from "next/link";
 
-const SocialLogins = () => {
+const SocialLogins = ({ mode }) => {
   const handleAuth = (event) => {
     signIn("google", {
       callbackUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/bookings`,
@@ -12,7 +13,18 @@ const SocialLogins = () => {
 
   return (
     <>
-      <div className="text-center text-xs text-gray-500">or Signup with</div>
+      <div className="text-center text-xs text-gray-500">
+        {mode === "register" ? (
+          <Link className="underline" href="/login">
+            Login
+          </Link>
+        ) : (
+          <Link className="underline" href="/register">
+            Register
+          </Link>
+        )}{" "}
+        or Signup with
+      </div>
       <div className="flex gap-4">
         {/* <button className=" w-full mt-4 py-2 border-gray-600/30 border rounded-md flex items-center gap-2 justify-center">
           <Image src="/fb.png" alt="facebook" width={40} height={40} />
