@@ -57,50 +57,9 @@ RoomBooker is a web application for booking hotels. This project utilizes MongoD
 
 ### Collections:
 
-1. **Users**: Stores user credentials and OAuth2 session details.
-2. **Hotels**: Stores details of hotels available for booking.
-3. **Bookings**: Stores booking details made by users.
-
-### Example Schema:
-
-- **Users**: `{ id, name, email, password (hashed), sessions }`
-- **Hotels**: `{ id, name, location, description, price, availability, features }`
-- **Bookings**: `{ id, userId, hotelId, date, status }`
-
----
-
-## Setting Up MongoDB
-
-1. **Install MongoDB**.
-2. **Create Collections**:
-   - Users
-   - Hotels
-   - Bookings
-3. **Insert Sample Data**:
-   ```json
-   {
-     "users": [
-       {
-         "name": "John Doe",
-         "email": "john@example.com",
-         "password": "hashed_password"
-       }
-     ],
-     "hotels": [
-       {
-         "name": "Hotel ABC",
-         "location": "City XYZ",
-         "price": 120,
-         "availability": true
-       }
-     ],
-     "bookings": [
-       {
-         "userId": "1",
-         "hotelId": "1",
-         "date": "2024-12-31",
-         "status": "confirmed"
-       }
-     ]
-   }
-   ```
+1. **Users**: Stores user information, including credentials and profile details.
+2. **Hotels**: Stores detailed information about hotels available for booking, including amenities and rates.
+3. **Bookings**: Stores information about user bookings, including check-in and check-out dates.
+4. **Ratings**: Stores user-provided ratings for hotels.
+5. **Reviews**: Stores user-written reviews for hotels.
+6. **Amenities**: Stores details about specific services offered by hotels.
