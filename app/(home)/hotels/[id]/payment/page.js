@@ -2,7 +2,10 @@ import { auth } from "@/auth";
 import PaymentForm from "@/components/payment/PaymentForm";
 import { redirect } from "next/navigation";
 
-export default async function PaymentPage() {
+export default async function PaymentPage({
+  params: { id },
+  searchParams: { checkin, checkout },
+}) {
   const session = await auth();
   if (!session) {
     redirect("/login");
@@ -15,7 +18,7 @@ export default async function PaymentPage() {
           You have picked <b>Effotel By Sayaji Jaipur</b> and base price is{" "}
           <b>$10</b>
         </p>
-        <PaymentForm />
+        <PaymentForm checkin={checkin} checkout={checkout} />
       </div>
     </section>
   );
