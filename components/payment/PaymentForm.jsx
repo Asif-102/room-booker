@@ -32,6 +32,8 @@ const PaymentForm = ({ loggedInUser, hotelInfo, checkin, checkout }) => {
         }),
       });
 
+      //recheck for deploy
+
       res.status === 201 && router.push("/bookings");
     } catch (error) {
       console.error(error);
