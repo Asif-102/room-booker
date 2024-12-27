@@ -39,7 +39,9 @@ const HotelSummaryInfo = ({ fromListPage, info, checkin, checkout }) => {
             Details
           </Link>
         ) : (
-          <button className="btn-primary ">Book</button>
+          <button className={info?.isBooked ? "btn-disabled" : "btn-primary"}>
+            Book
+          </button>
         )}
       </div>
     </>
