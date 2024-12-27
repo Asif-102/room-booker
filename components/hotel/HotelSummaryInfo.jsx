@@ -1,3 +1,4 @@
+import Link from "next/link";
 import HotelRating from "./HotelRating";
 import HotelReviewNumber from "./HotelReviewNumber";
 
@@ -28,7 +29,9 @@ const HotelSummaryInfo = ({ fromListPage, info }) => {
         </h2>
         <p className=" text-right">Per Night for 1 Room</p>
         {fromListPage ? (
-          <button className="btn-primary ">Details</button>
+          <Link href={`/hotels/${info?.id}`} className="btn-primary ">
+            Details
+          </Link>
         ) : (
           <button className="btn-primary ">Book</button>
         )}
