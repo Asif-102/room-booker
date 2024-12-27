@@ -1,4 +1,5 @@
 import HotelRating from "./HotelRating";
+import HotelReviewNumber from "./HotelReviewNumber";
 
 const HotelSummaryInfo = ({ fromListPage, info }) => {
   return (
@@ -12,7 +13,7 @@ const HotelSummaryInfo = ({ fromListPage, info }) => {
         <p>📍 {info?.city}</p>
         <div className="flex gap-2 items-center my-4">
           <HotelRating id={info?.id} />
-          <span>232 Reviews</span>
+          <HotelReviewNumber id={info?.id} />
         </div>
         <div>
           <span className="bg-yellow-300 p-1 rounded-md">
